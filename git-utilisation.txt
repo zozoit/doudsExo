@@ -1,0 +1,14 @@
+# Pour aller dans le bon répertoire
+cd E:\Documents\claire\Exercices
+
+# Pour rajouter un document
+git add .
+
+# Pour sauver un changement
+git commit -am "commentaire que tu veux"
+
+# Pour pousser ton changement sur internet (et partager)
+git push origin master
+
+# Pour récupérer mes changements
+git pull --rebase
