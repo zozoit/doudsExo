@@ -1,0 +1,82 @@
+
+<!-- saved from url=(0042)file:///E:/Telechargements/plantation.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <script>
+
+	function Plante(nom, joursGermination, poidsRecolte) {
+        this.nom = nom;
+        this.joursGermination = joursGermination;
+        this.poidsRecolte = poidsRecolte;
+		// Creer le constructeur de l'objet plante avec ses trois attributs
+	}
+
+	function planter(plante) {
+        console.log("Vous venez de planter"+" "+plante.nom+" "+",la récolte sera prête dans"+ " "+plante.joursGermination+".");
+		// Function qui écrit dans console log "Vous venez de planter <nom de la plante>, la récolte sera prête dans <joursGermination> jours."
+	}
+
+	function rapportQuantiteJour(plante){
+        return plante.poidsRecolte/plante.joursGermination;
+		// Function qui renvoie le nombre de g de récolte par jours de germination. Ex pour Menthe : 10/5 soit 2
+	}
+
+	function recolter(plantes) {
+        // TU AVAIS MIS : for (let i=0; 0<plantes.length;i++), ca faisait une boucle infini, car 0 est toujours inferieur a plantes.length !!!! BAD DOUDS !
+        let total = 0;
+        for (let i=0; i<plantes.length; i++){
+            total = total + plantes[i].poidsRecolte;
+            
+        }
+        return total;
+		// Function qui renvoie la somme des poids de recoltes de toutes les plantes - utilisation boucle for car plantes est un tableau d'objets Plante
+	}
+
+	function nbJours(plantes) {
+        let max = 0;
+        for (let i= 0; i<plantes.length;i++){
+            if (max <= plantes[i].joursGermination ) {
+                max = plantes[i].joursGermination;
+            }
+        } return max;
+		// Function qui renvoie dans combien de jours toutes les plantes auront germées - utilisation boucle for - difficulte plus grande
+	}
+
+	// Ne rien modifier au dessous de cette ligne
+
+	const menthe = new Plante("Menthe", 5, 10);
+	const thym = new Plante("Thym", 10, 5);
+	const coriandre = new Plante("Coriandre", 8, 10);
+	const persil = new Plante("Persil", 15, 20);
+	const aneth = new Plante("Aneth", 5, 5);
+
+
+	// LES TESTS !
+
+	console.log("doit renvoyer 'Vous venez de planter Menthe, la récolte sera prête dans 5 jours' :");
+	planter(menthe);
+	console.log("doit renvoyer 'Vous venez de planter Persil, la récolte sera prête dans 15 jours' :");
+	planter(persil);
+
+	console.log("doit renvoyer 0.5 :");
+	console.log(rapportQuantiteJour(thym));
+	console.log("doit renvoyer 2 :");
+	console.log(rapportQuantiteJour(menthe));
+
+	const mesPlantes = [aneth, persil, menthe, coriandre];
+
+	console.log("doit renvoyer 45 :");
+	console.log(recolter(mesPlantes));
+
+	console.log("doit renvoyer 15 :");
+	console.log(nbJours(mesPlantes));
+
+	</script>
+
+	</head><body>Exercice 2
+
+	<p>
+	Exercice avec des plantes !
+	<br>Appuie sur F12 pour voir la console et les résultats des tests de tes functions.
+	</p>
+</body></html>

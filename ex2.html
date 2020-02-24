@@ -1,0 +1,145 @@
+
+<!-- saved from url=(0035)file:///E:/Telechargements/ex2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>
+
+	function addition(a, b) {
+		
+        return a + b;
+	}
+    
+
+	function soustraction(a, b) {
+	
+		return a - b;
+	}
+
+	function multiplication(a, b) {
+	
+		return a * b;
+	}
+
+	function concatenerAvecEspace(a, b) {
+		
+		return a + " " + b;
+	}
+    
+  
+    function personnePouvantRentrer(age) {
+        if(age>18) {
+            console.log("Vous pouvez rentrer");
+        } else {
+            console.log("Vous ne pouvez pas rentrer");
+        }
+         
+    }
+     personnePouvantRentrer(19);
+   
+    
+    
+    
+    
+    function Person(name,age,sexe) {
+        this.name = name;
+        this.age = age;
+        this.sexe = sexe;
+    }
+        
+    let personn1 = new Person("Claire", 27, "femme");
+    let personn2 = new Person("Vincent", 42, "homme"); 
+    
+    personn1.hair = "blonde";
+    console.log(personn1);
+    
+    function sePresente(person) {
+        console.log("Bonjour, je m'appelle " + person.name + ", j'ai " + person.age + " ans et je suis un(e) " + person.sexe)
+    }
+    
+    sePresente(personn1);
+    sePresente(personn2);
+    sePresente(personn2);
+    
+       function chiffreAleatoire() {
+       
+       return Math.random();
+   }
+   
+    
+   function Loto (chiffre1,chiffre2,chiffre3) {
+       this.chiffre1 = chiffre1;
+       this.chiffre2 = chiffre2;
+       this.chiffre3 = chiffre3;      
+   } 
+    
+    function addLoto(loto){
+        return loto.chiffre1 + loto.chiffre2 + loto.chiffre3;
+    }
+    
+    let chance = new Loto(5,4,8);
+    chance.chiffre4 = chiffreAleatoire(); 
+    console.log(addLoto(chance));
+    
+//chiffre4 = nombre aléatoire entre 0 et 1 (dont 1 est exclu)
+console.log(chance);
+    
+
+    
+    const maquillage = [];
+    maquillage.push("mmmmm","222222222","mmmmmmm");
+    
+    console.log(maquillage);
+    
+
+    
+
+    
+    
+   
+   
+
+	console.log("function addition");
+
+	const resultat1 = addition(2, 3);
+	console.log("doit renvoyer 5 :");
+	console.log(resultat1);
+
+	const resultat2 = addition(4, 4);
+	console.log("doit renvoyer 8 :");
+	console.log(resultat2);
+
+	console.log("------------------------------");
+	console.log("function soustraction");
+
+	const resultat3 = soustraction(8, 2);
+	console.log("doit renvoyer 6 :");
+	console.log(resultat3);
+
+	console.log("------------------------------");
+	console.log("function multiplication");
+
+	const resultat4 = multiplication(4, 5);
+	console.log("doit renvoyer 20 :");
+	console.log(resultat4);
+
+	console.log("------------------------------");
+	console.log("function concatenerAvecEspace");
+
+	const resultat5 = concatenerAvecEspace("Bonjour", "Claire");
+	console.log("doit renvoyer 'Bonjour Claire' :");
+	console.log(resultat5);
+    
+    
+    
+    
+    
+
+
+	</script>
+
+	</head><body>Exercice 2
+
+	<p>
+	Modifier l'interieur de toutes les functions pour qu'elles fonctionnent correctement
+	<br>La derniere function doit concaténer deux chaines de caractères en rajoutant un espace au milieu
+	<br>Appuie sur F12 pour voir la console et les résultats des tests de tes functions.
+	</p>
+</body></html>

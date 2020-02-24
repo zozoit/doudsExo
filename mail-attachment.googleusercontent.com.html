@@ -1,0 +1,136 @@
+<html>
+   <head>
+      <title>VueJs Instance</title>
+      <script type = "text/javascript" src = "js/vue.js"></script>
+   </head>
+   <body>
+      <div id = "databinding">
+         <div v-bind:style = "{ color: activeColor, fontSize: fontSize + 'px' }">{{title}}</div>
+      </div>
+        <div id = "phrase">
+       <p onclick="phrase" >{{title}}</p>
+       </div>
+       <div id="message-reverse">
+        <p> Le message initial est :{{message}}</p>
+        <p> Le nouveau message est : {{messageInverse}}</p>
+       </div>
+       <div id="compo">
+           <mon-composant></mon-composant>
+       </div>
+       <div id="presenter">
+           <le nom="Claire"></le>
+       </div>
+       <div id="modele">
+           <input v-model="nomSaisi">
+           <br>
+           <nom v-bind:nom="nomSaisi"></nom>
+       </div>
+       
+       
+       <div id="tuto">
+            <input v-model="nomSaisi">
+        <br>
+            <nom v-bind:nom="nomSaisi"></nom>
+        </div>
+       <div id="tutoriel">
+           <liste v-for= "personne in personnes" v-bind:personne= "personne"></liste>
+       </div>
+       
+       
+      
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   </body>
+</html>
+
+ <script type = "text/javascript">
+         var vm = new Vue({
+            el: '#databinding',
+            data: {
+               title : "Inline style Binding",
+               activeColor: 'red',
+               fontSize :'30'
+            }
+         });
+     
+     let frase = new Vue ({
+         el: '#phrase',
+         data : {
+             title: "Coucou"
+         }
+     })
+     
+     const msg = new Vue ({
+         el: '#message-reverse',
+         data : {
+             message : "sandra",
+         },
+         computed : {
+             messageInverse : function() {
+                 return this.message.split('').reverse().join('');
+             }
+         }
+     })
+    
+     const exo = new Vue ({
+         el:'#compo',
+         components : {
+             'mon-composant' : {
+                 template : '<p>Mon premier composant !!!</p>'
+             }
+         }
+     })
+     
+     const exo2 = new Vue ({
+         el: '#presenter',
+         components : {
+             'le' : {
+                props : ['nom'],
+                template : '<p>Je suis : {{nom}} LACANAL</p>'
+                 
+             }
+         }
+     })
+     
+    Vue.component('nom', {
+        props : ['nom'],
+        template : '<p>Mon nom est <strong>{{nom}}</strong></p>'
+    });
+    
+    new Vue ({
+        el:'#modele'
+    });
+     
+     
+     
+    
+     Vue.component('nom', {
+         props: ['nom'],
+         template: '<p>Mon nom est <strong>{{nom}}</strong></p>'
+     });
+ 
+     new Vue({
+     el: '#tuto'
+     });
+  
+     
+     const prenomList = new Vue ({
+         el:'#tutoriel',
+         data: {
+             personnes : [
+                 {nom: 'Lacanal', prenom: 'Claire'},
+                 {nom: 'Bosc', prenom: 'Vincent'},
+                 {nom: 'Bosc', prenom:'Adèle'},
+             ]
+         },
+         components : {
+             'liste':{
+                 props:['personne'],
+                 template:'<li>{{personne.nom}} {{personne.prenom}}</li>'
+             }
+             
+         }
+     });
+     
+     
+     
+</script>

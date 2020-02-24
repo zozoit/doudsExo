@@ -1,0 +1,86 @@
+
+<!-- saved from url=(0037)file:///E:/Telechargements/chien.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>
+
+	function Chien(nom, race, age) {
+		this.nom = nom;
+        this.race = race;
+        this.age = age;
+	}
+
+	function aboyer(chien) {
+       Chien.aboyer = " WOUF !";
+       console.log(chien.nom + " " + Chien.aboyer);
+        
+		
+	}
+
+	function ageCanin(chien) {
+        return chien.age * 7
+        
+		// Function qui renvoie un entier correspondant à l'age en chien du chien en parametre, c.a.d son age multiplié par 7
+	}
+
+	function estUnChiot(chien) {
+        if(chien.age <= 1){
+            return true;
+        } else {
+            return false;
+        }
+		// Function qui renvoie true si le chien a 0 ou 1 an, et false si c'est plus
+	}
+
+	function estUnBerger(chien) {
+		if(chien.race === "Berger des Shetlands"&&"Berger Australien") {
+            return true;
+        } else {
+            return false;
+        }
+	}
+
+	// Ne rien modifier au dessous de cette ligne
+
+	const medor = new Chien("Medor", "Caniche", 12);
+	const igor = new Chien("Igor", "Dogue Allemand", 10);
+	const upsa = new Chien("Upsa", "Berger des Shetlands", 1);
+	const azrou = new Chien("Azrou", "Berger Australien", 7);
+	const buck = new Chien("Buck", "Golden Retriever", 0);
+
+
+	// LES TESTS !
+
+	console.log("doit renvoyer 'Upsa : WOUF!' :");
+	aboyer(upsa);
+	console.log("doit renvoyer 'Azrou : WOUF!' :");
+	aboyer(azrou);
+
+	console.log("doit renvoyer true :");
+	console.log(estUnBerger(upsa));
+
+	// Note : on peut utiliser une variable intermediaire si on veut, pas de differences avec au dessus
+	const resultat = estUnBerger(igor)
+	console.log("doit renvoyer false :");
+	console.log(resultat);
+
+	console.log("doit renvoyer true :");
+	console.log(estUnChiot(buck));
+
+	console.log("doit renvoyer false :");
+	console.log(estUnChiot(igor));
+
+	console.log("doit renvoyer 49 :");
+	console.log(ageCanin(azrou));
+
+	console.log("doit renvoyer 70 :");
+	console.log(ageCanin(igor));
+	
+
+	</script>
+
+	</head><body>Exercice 2
+
+	<p>
+	Exercice avec des chiens !
+	<br>Appuie sur F12 pour voir la console et les résultats des tests de tes functions.
+	</p>
+</body></html>

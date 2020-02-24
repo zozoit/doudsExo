@@ -1,0 +1,1326 @@
+<script>
+   
+let tableau = [ "Claire Lacanal", "Vincent Bosc"];
+tableau.push("Didier");    
+console.log(tableau);
+    
+function choisirLangue (langue) {
+    let tab = ["Anglais", "Espagnol", "Italien"];
+    tab.push(langue);
+    return tab;
+}
+console.log(choisirLangue("français"));  
+    
+function ajoutChiffre(chiffre) {
+    let tabchif = [2, 4, 8];
+    tabchif.unshift(chiffre);
+    return tabchif;
+}
+console.log(ajoutChiffre(1));
+    
+
+let tb = ["Coucou", "c'est", "moi"];
+tb.unshift("yo");
+console.log(tb);
+    
+let tab2 = ["Mal", "aux", "dents"];
+tab2.shift();
+tab2.pop();
+console.log(tab2);
+    
+let array = ["Today", "it", "was", "funny", "and", "cold"];
+array.splice(4,2);
+console.log(array);
+let newArray = array.splice(4,2);
+console.log(newArray);
+    
+let nombres = [1, 2, 3, 4, 5];
+const startIndex = 2;
+const amountToDelete = 1;
+nombres.splice(startIndex,amountToDelete, 20, 20);
+console.log(nombres);
+    
+let panier = [ "fruits", "viandes", "légumes", "dessert"];
+let monPanier = panier.slice(1,3);
+console.log(monPanier);
+console.log(panier);
+    
+let moi = [ "Claire", 27, true];
+let toi = [...moi];
+console.log(toi);
+    
+const trouver = ["chapeau", "gant", "bonnet"];
+console.log(trouver.indexOf("gant"));
+console.log(trouver.indexOf("bonnet"));
+console.log(trouver.indexOf("chaussures"));
+    
+let personnage = {
+    Claire : "grande",
+    Vincent : "petit",
+    Olivier : {
+        vetements : ["chapeau", "pantalon"]
+        
+}   
+}
+console.log(personnage);
+    
+function rajouterPersonnage(person, vetement) {
+    person.Olivier.vetements.push(vetement);
+    return person.Olivier;
+}
+console.log(rajouterPersonnage(personnage, "slip"));
+    
+    
+    
+let detenus = {
+    Thomas : {
+        age : 18,
+        duree : 5,
+        enfant : 1},
+    
+    Leslie : {
+        age : 35,
+        duree : 10,
+        enfant : 3},
+    
+    Victor : {
+        age : 28,
+        duree : 3,
+        enfant : 0  
+        
+            } 
+        } 
+        
+
+    
+function autoriserASortir(detenus) {
+    for(let detenu in detenus) {
+        console.log(detenu);
+        if(detenu.age > 18 && detenu.enfant > 0) {
+            return "Vous avez"+" "+detenu.age+"et"+" "+ detenu.enfant + "." + "Vous pouvez sortir";
+        }else if(detenu.enfant >= 1) {
+            return "Vous êtes libérable dans un an.";
+        }else{
+            return "Vous devez purger toute votre peine.";
+        }
+    }
+}
+
+    console.log(autoriserASortir(detenus));
+
+    
+//function retournerTableauDecroissant(arr) {
+    //for(let i = 0; i <arr.length(-1); i--);
+    
+//}
+
+//console.log(retournerTableauDecroissant([1,2,3,4]));
+    
+
+
+
+const tab = ["a", "b", "c", "d", "e", "f", "g", "h"];
+
+	// 1er exercice
+//console.log("1er exercice : doit afficher h puis g puis ... puis a")
+
+//for (let i= tab[i].length(-1); i < tab.length; i--) { // tu ne dois modifier que cette ligne
+//console.log(tab[i]);
+//}
+	
+// 2eme exercice, de deux en deux
+//console.log("1er exercice : doit afficher a puis c puis e puis g")
+	
+//for (let i=0; i < tab.length; 2++) { // tu ne dois modifier que cette ligne
+//console.log(tab[i]);
+//}
+
+// 3eme exercice, demarre de la 2eme case
+//console.log("1er exercice : doit afficher b puis c puis ... jusqu'à h")
+
+//for (let i=1; i < tab.length; i++) { // tu ne dois modifier que cette ligne
+//console.log(tab[i]);
+//}
+
+
+let myName = "Claire Lacanal";
+let myPresentation = "Je m'appelle ";
+let result = myPresentation += myName;
+console.log(result);
+
+let longueurOfWord = 0;
+let word = "anticonstitutionnellement";
+
+let resultLongueur = word.length;
+console.log(resultLongueur);
+    
+let myHouse = "fraternite";
+let numero = myHouse[2];
+console.log(numero);
+    
+let bonjour = "Bonjour tout le monde";
+let afficherLettre = bonjour[2];
+console.log(afficherLettre);
+bonjour = "Coucou tout le monde";
+console.log(bonjour);
+let afficherSeptiemeLettre = bonjour[5];
+console.log(afficherSeptiemeLettre);
+let lastLetter = bonjour[bonjour.length - 1];
+console.log(lastLetter);
+let sortez = "sortez";
+let chaine = bonjour+" "+sortez+".";
+console.log(chaine);
+let myArrayClaire = ["Claire Lacanal", 3, "jeune"];
+let indexMyArray = myArrayClaire[1];
+console.log(indexMyArray);
+let nombresTab = [[1,2],[3,4],[5,6]];
+let reponseTab = nombresTab[1][1];
+console.log(reponseTab);
+let panierARemplir = [["cerise",5],["concombre",2],["tomate",4],["viande",1]];
+panierARemplir.push(["fromage",20],["dessert",15]);
+console.log(panierARemplir);
+    
+function numeroPre(num,message) {
+    console.log("Hello" +" "+num+" "+message);
+    
+}
+    numeroPre(27,"Venez manger");
+    
+
+let age = 18;
+ 
+function entreeBoite(myAge) {
+    let accord = ""
+    if(myAge >= age) {
+        console.log("Vous pouvez rentrer car vous avez"+" "+myAge+".");
+    }else{
+        console.log("Vous ne pouvez pas rentrer");
+    }
+}
+entreeBoite(16);
+
+
+let choisir = 2;
+    
+function choisirUnChiffre() {
+    let choisir = 4;
+    console.log(choisir);
+}
+choisirUnChiffre();
+    
+
+function ajouterNameEtLastName(name, lastname) {
+    console.log("Je m'appelle"+" "+name+" "+lastname+".");
+}
+ajouterNameEtLastName("Vincent","Bosc");
+
+function calculerAgeChien(age, rajout) {
+    return age + rajout;
+}
+console.log(calculerAgeChien(2,7));
+    
+let tabNombres = [1,2,3,4,5];
+function rajouterDesNombres(arr, chiffre) {
+    arr.push(chiffre);
+    console.log(tabNombres);
+    let changed = arr.shift(chiffre);
+    return changed;
+    
+}
+console.log(rajouterDesNombres(tabNombres,2));
+    
+function choisirUneMaisonOuAppartement(selection) {
+    if (selection == 1 ) {
+        return true;
+    }else{
+        return false;
+    }
+}
+console.log(choisirUneMaisonOuAppartement(2));
+
+function moyenDeTransport(kilometres) {
+    if(kilometres>100) {
+        return "Prenez le train. Ce sera plus économique";
+    }else{
+        return "Vous pouvez prendre la voiture";
+    }
+}
+console.log(moyenDeTransport(102));
+    
+function acheterCroissant(espece) {
+    if(espece!= 5) {
+        return "Vous ne pouvez pas acheter ce croissant";
+    }else{
+        return "Vous pouvez acheter ce croissant";
+    }
+}
+console.log(acheterCroissant(6));
+
+function egality(num) {
+    if(num === 3) {
+        return "C'est égal";
+    }else{
+        return "Ce n'est pas égal";
+    }
+}
+console.log(egality('3'));
+    
+function strictLogical(num){
+    if(num >6 && num<8) {
+        return true;
+    }else{
+        return false;
+    }
+}
+    console.log(strictLogical(7));
+    
+
+function beauteSante(taille,poids) {
+    if(taille > 170 && poids <80 || taille > 180 && poids <90) {
+        return "Vous êtes en bonne santé";
+    }else{
+        return "Mettez vous au sport";
+    }
+}
+console.log(beauteSante(160, 110));
+console.log(beauteSante(172,79));
+    
+function plusieursChoix(lettre) {
+    if(lettre == "C") {
+        return "C'est la bonne lettre";
+    }else if(lettre == "D"){
+        return "C'est la bonne réponse";    
+    }else{
+        return "Mauvais choix";
+    }
+}
+console.log(plusieursChoix("D"));
+
+
+let names = ["Vincent","Claire","Olivier","Cécile"];
+    
+function grandeTaille(taille) {
+    if(taille ==170) {
+        return names[1];
+    }else if(taille <170){
+        return names[3];       
+    }else if(taille>180){
+        return names[0];
+    }else if(taille == 175){
+        return names[2];
+    }else{
+        return "ERROR";
+}
+}
+console.log(grandeTaille(190));
+
+function plusieursCas(lettre) {
+    switch(lettre) {
+        case "a":
+            return "Vous avez choisi la lettre A";
+            break;
+        case "b":
+            return "Vous avez choisi la lettre B";
+            break;
+        case "c":
+            return "Vous avez choisi la lettre C";
+            break;
+    }
+    return "ERROR";
+}
+console.log(plusieursCas("a"));
+console.log(plusieursCas("d"));
+    
+    function mettreVetements(val) {
+        let reponse = "";
+        
+        switch(val) {
+            case 1:
+                reponse = "chaussettes";
+                break;
+            case 2:
+                reponse = "gants";
+                break;
+            case 3:
+                reponse = "bonnet";
+                break;
+            default:
+                reponse = "Veuillez réitérer votre saisi";
+                break;
+        }
+        return reponse;
+    }
+    console.log(mettreVetements(5));
+    
+    
+    
+    function choisirPrestation(val) {
+        let choix = " ";
+   
+    switch(val){
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+            choix = "Ces prestations concernent toutes les épilations";
+            break;
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+            choix = "Ces prestations concernent tous les soins de beauté";
+            break;
+        
+    }
+    return choix;
+    }
+    console.log(choisirPrestation(7));
+    console.log(choisirPrestation(2));
+    
+    
+    
+    function prendreRdv(myAge,val) {
+        
+        let age = 18;
+        let reponse = "";
+        let presentationsPossible = ["Vous pouvez prendre rendez-vous.","Vous ne pouvez pas prendre rendez-vous."];
+        if(myAge >= age) {
+            reponse = presentationsPossible[0];
+            
+            switch(val) {
+            case 1:
+                reponse = reponse + " cheveux";
+                break;
+            case 2:
+                reponse = reponse + " corps";
+                break;
+            case 3:
+                reponse = reponse + " visage";
+                break;
+            default:
+                reponse = reponse + " Veuillez réitérer votre demande";
+                break;
+        }
+        }else{
+            reponse = presentationsPossible[1];           
+        }
+    
+        
+       
+        return reponse;
+    } 
+
+    console.log(prendreRdv(19, 1));
+    
+    function chosirCouleurs(couleurs) {
+        let paletteDeCouleurs = ["vert", "orange","jaune"];
+        paletteDeCouleurs.push(couleurs);
+        return paletteDeCouleurs;
+    }
+    console.log(chosirCouleurs("rouge"));
+    
+    function multiplication(a,b) {
+        if(a * b === 4) {
+            return "Bonne réponse";
+        }else{
+            return "No";
+        }
+    }
+    console.log(multiplication(4,2));
+    
+    
+    function groupeClasse(pseudonyme) {
+        let count = 0;
+        switch(pseudonyme) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                count++;
+                break;
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+                count = -1;
+                break;
+            case 10:
+                count--;
+                break;
+        }
+        if( pseudonyme > 0) {
+            return "La valeur est positive";
+        }else{
+            return "La valeur est négative";
+        }              
+       
+    }
+    
+    console.log(groupeClasse(9));
+    
+    
+    function choisirReponse(num) {
+        if(num === 1) {
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
+    console.log(choisirReponse(2));
+    
+    let claire = {
+        "name": "Claire",
+        "age": 28,
+        "taille": 172,
+        "amoureux": "Vincent"
+    }
+    console.log(claire);
+    let nameProp = claire.name;
+    let ageProp = claire.age;
+    console.log(nameProp);
+    console.log(ageProp);
+    
+    let vincent = {
+        "name": "Vincent",
+        "age": 42,
+        "taille":180,
+        "amoureuse": "Claire"
+    }
+    
+    console.log(vincent);
+    let nameVincent = vincent["name"];
+    let amoureuseVincent = vincent["amoureuse"];
+    console.log(nameVincent);
+    console.log(amoureuseVincent);
+    
+    function choisirGateau(myPart) {
+        let presentationGateau = ["fraiser", "framboisier", "merveilleux", "tarte"];
+        let part = 8;
+        let choisirGateau = "Je choisi";
+        for(let i = 0; i < presentationGateau.length; i++);
+        if(myPart === 8 ) {
+            return choisirGateau +" "+ presentationGateau[0]+" "+ "et/ou"+" "+presentationGateau[1];
+        }else if (myPart >= 4 && myPart <8) {
+            return choisirGateau +" "+ presentationGateau[2];
+        }else if(myPart === 2) {
+            return choisirGateau +" "+ presentationGateau[3];
+        }else{
+            return "Il n'y a pas de gateaux dans ce format là";
+        }
+        
+    }
+    console.log(choisirGateau(7));
+    
+    
+    let objetPersonn = {
+        "name" : "Claire",
+        "age" : 27,
+        "taille": 172
+    
+    }
+    
+    console.log(objetPersonn);
+    objetPersonn.name = "Elodie";
+    objetPersonn["name"] = "Elodie";
+    
+    console.log(objetPersonn);
+    
+    let secondPersonnage = {
+        "name":"Vincent",
+        "age":43,
+        "taille": 172
+        
+    }
+    
+    secondPersonnage.crie = "Didouuuuuuuuuuuuuu";
+    secondPersonnage["crie"] = "Didouuuuuuuuuuu";
+    console.log(secondPersonnage);
+    delete secondPersonnage.name;
+    console.log(secondPersonnage);
+    
+    function choisirUnCandidat (name) {
+    
+        let choixFinal = "";
+        
+        let candidats = {
+           "homme" : "Romain",
+            "femme" : "Celine",
+            "trans" : "Marie"
+        };
+        
+        choixFinal = candidats[name];
+        return choixFinal;
+    }
+    
+  console.log(choisirUnCandidat("femme"));
+    
+    let differentsAnimaux = {
+        "crocro": "Cheval",
+        "asticot": "Chat",
+        "Verneuil": "Chien"
+        
+    }
+    
+    function choisirAnimaux(name) {
+        if(differentsAnimaux.hasOwnProperty(name) === true) {
+            return differentsAnimaux[name];
+        }else{
+            return "pas trouvé";
+        }
+    }
+    console.log(choisirAnimaux("asticot"));
+    console.log(choisirAnimaux("bidule"));
+
+    
+    let reservation = [
+        {
+            "name" : "name",
+            "date" : "date",
+            "heure" : "heure",
+            "extras" : [
+                "music",
+                "jeux",
+                "dj"
+            ],
+        },
+        {
+        "name" : "name",
+            "date" : "date",
+            "heure" : "heure",
+            "extras" : [
+                "music",
+                "jeux",
+                "bite"
+            ]
+        }
+    ];
+    console.log(reservation);
+    
+    let resultResa = reservation[1]. extras[2];
+    console.log(resultResa);
+    
+    
+    
+    
+    let profClass = {
+        "cp" : "Marine",
+        "ce1" : "Josseline",
+        "ce2" : "Henry",
+        "cm1" : "Luc",
+        "cm2" : "Claire",
+        "suggestions" : [
+            "prendre RDV",
+            "envoyer un mail",
+            " téléphoner"
+        ]
+    }
+    console.log(profClass);
+    
+    function contacterUnProf(classe) {
+        if(profClass.hasOwnProperty(classe) === true) {
+            return profClass[classe];
+            } else {
+            return "Cette classe n'existe pas";
+            
+            }
+    }
+    function rendezVous(suggestion){ 
+            let reponse = "";
+            let phraseDeCourtoisie = [" Vous avez selectionné : ", "Désolé, veuillez réessayer"];
+            reponse = phraseDeCourtoisie[0];
+            switch(suggestion) {
+                case 1 : 
+                    reponse = reponse + "prendre RDV";
+                    break;
+                case 2 :   
+                    reponse = reponse + "envoyer un mail";
+                    break;
+                case 3 :  
+                    reponse = reponse + "téléphoner";
+                    break;
+                default : 
+                    reponse = phraseDeCourtoisie[1];
+                    break;
+            }
+            return reponse;
+        }
+     
+  
+    console.log(contacterUnProf("cp"));
+    console.log(rendezVous(1));
+   
+    
+    
+
+
+    let tabzeze = [];
+    let i = 10;
+    while( i < 20) {
+        tabzeze.push(i);
+        i++;
+    }
+    
+    console.log(tabzeze);
+    
+    let myTableauloop = [];
+    
+    for(let i = 0; i < 20; i+i++) {
+        myTableauloop.push(i);
+    }
+    console.log(myTableauloop);
+    
+    let mnTablo = [1,2,3,4,5];
+    let toto = 0;
+    
+    for(let i = 0; i < mnTablo.length; i++) {
+        toto +=mnTablo[i];
+    }
+  console.log(mnTablo);
+    
+    function multiplyTablo(arr) {
+        let product = 1;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j <arr[i].length; j++) {
+                product *= arr[i][j];
+            }
+            return product;
+        }
+        
+    }
+    
+    console.log(multiplyTablo([[1,2],[3,4],[5,6]]));
+    
+    
+    let panierAliments = [
+        {
+            "name" : "cerise",
+            "nombre": 10,
+            "couleur": "rouge"
+            
+        },
+        
+        {
+            "name" : "banane",
+            "nombre": 20,
+            "couleur": "jaune"
+            
+        },
+        
+        {
+            "name" : "pomme",
+            "nombre": 40,
+            "couleur": "vert"
+        }
+    ];
+    
+    function trouverDanslePanier(name,prop) {
+        for(let i = 0; i <panierAliments.length; i++) {
+            if(panierAliments[i].name === name) {
+                    return "c'est ok";
+                
+            }else{
+                return "Il n'y a pas ce type d'aliments dans le panier";
+            }
+        }
+    }
+    
+    console.log(trouverDanslePanier("banane",20));
+    console.log(trouverDanslePanier("cerise",20));
+    
+    function strToNumber(string) {
+        let a = parseInt(string);
+        return a;
+    }
+    
+    console.log(strToNumber("103"));
+    
+    
+    
+    function selectionnerUnProduit(arr) {
+        let result = 0;
+        for(let i = 0; i < arr.length; i++) {
+            for(let j = 0; j < arr[i].length; j++) {
+                result += result + arr[i][j];
+                console.log(result);
+            let final = 3000;
+        if(result > final) {
+            return "Le tableau"+" "+arr+" "+"présente un résultat supérieur au nombre attendu"+" "+final;
+        }else{
+            return "Le tableau"+" "+arr+" "+"présente un résultat inférieur au nombre attendu"+" "+final;
+        }    
+            }
+        }
+    }
+    console.log(selectionnerUnProduit([[20,10],[10,5],[30,40],[20,12]]));
+    
+    
+    
+   function rendreUnChiffreAleatoire(num){
+       let aletoire = Math.random();
+       return aletoire;
+   }  
+    
+    console.log(rendreUnChiffreAleatoire(12));
+    
+    function multiplierChiffreAleatoire(max,min) {
+        let result = Math.floor(Math.random()*(max-min + 1)) + 1;
+        return result;
+    }
+    console.log(multiplierChiffreAleatoire(15,5));
+    
+    
+    
+    
+    let cottages = [
+        {   
+            "emplacement" : "montage",
+            "nom": "maison du bonheur",
+            "exposition" : "sud",
+            "couleur" : "blanche",
+            "lits" : 3
+        },
+        
+        {
+            "emplacement" : "mer",
+            "nom": "maison les pieds dans l'eau",
+            "exposition" : "ouest",
+            "couleur" : "rose",
+            "lits" : 5
+        },
+        
+        {
+            "emplacement" : "foret",
+            "nom": "Au bruit de la foret",
+            "exposition" : "est",
+            "couleur" : "bleu",
+            "lits" : 8
+        },
+        
+        {
+            "emplacement" : "campagne",
+            "nom": "Brun de folie",
+            "exposition" : "nord",
+            "couleur" : "rouge",
+            "lits" : 10
+        }
+    ];
+ 
+    
+    
+    function selectionnerVotreCottage(prop) {
+        let reponse = " ";
+        let phraseAccroche = ["Nous avons sélectionné pour vous :", "Nous n'avons aucun produit correspondant à vos critères"];
+        if(cottages.hasOwnProperty[prop] === true) {
+            reponse = phraseAccroche[0] + " "+ cottages[prop];   
+        }else{
+            reponse = phraseAccroche[1];
+        }
+        return reponse;
+    }
+    console.log(selectionnerVotreCottage("lits"));
+    
+    
+    
+    
+    let objetExemple = {
+        "name":"Claire",
+        "age": 28,
+        "taille": 172
+    }
+    
+    function donnerObjet(name) {
+        let reponse = objetExemple.hasOwnProperty[name];
+        return objetExemple[name];
+    }
+    console.log(donnerObjet("name"));
+    
+    
+ 
+    
+    
+    function faireSaListeDeJouets (jouet) {
+        let listeDeJouets = ["Poupée", "camion","jeux de société","vélo"];
+            listeDeJouets.push(jouet);
+            return listeDeJouets;
+            
+        }
+      
+    
+    console.log(faireSaListeDeJouets("ordinateur"));
+    
+    function diviserParDix(val) {
+        let result = val / 10;
+        return result;
+    }
+    
+    console.log(diviserParDix(10));
+    
+    
+    let objetPourExercer = [
+        {
+          "nom":"poupée",
+          "prix": 5,
+          afficherPrix : function() {
+              console.log(this.prix);
+          }
+        },
+    ];
+    
+    
+ 
+    let prix1 = Object.create(objetPourExercer);
+    prix1.afficherPrix;
+    console.log(objetPourExercer);
+    
+    let prix2 = Object.create(objetPourExercer);
+    objetPourExercer.prix = 10;
+    prix2.afficherPrix;
+    console.log(objetPourExercer);
+    
+    
+  const a = { name:"Claire", age:28, taille:172};
+  const b = { name:"Vincent", age:43, taille:180};
+    
+  const rassemblement = Object.assign(b,a);
+    console.log(rassemblement);
+    let propriété = Object.getOwnPropertyNames(a);
+    console.log(propriété);
+    
+    
+    let objFreeze = {
+        "name":"claire"
+    }
+    Object.freeze(objFreeze);
+    
+    objFreeze.name = "Vincent";
+    
+    console.log(objFreeze.name);
+    
+  
+    function changerIdentité(prenom, nom){
+        let phrase = "Je souhaite désormais m'appeller:"+prenom+" "+nom;
+        return phrase;
+    }
+    console.log(changerIdentité("claire","lacanal"));
+    
+    function chercherPlusGrand(val) {
+        let tableau = [2,2,2];
+        let result = 0;
+        for(let i = 0; i < tableau.length;i++) {
+            result = result + tableau[i];
+        }
+        let final = result > val ? "oui":"non";
+         return final;
+          
+    }
+   
+     console.log(chercherPlusGrand(10));
+    
+    
+    
+    let presenterVous = {
+        "name":"Claire",
+        "age":"28",
+        "taille":172,
+        "phrase": function() {
+            alert("Je m'appelle"+" "+this.name+" "+"et j'ai"+" "+this.age) ;
+            
+        }
+    }
+   
+  console.log(presenterVous.phrase);
+    
+    
+    
+    class entrepriseModerne {
+        static nomEntreprise = "Lachaux Paysage";
+    }
+    console.log(entrepriseModerne.nomEntreprise);
+   
+    
+    
+    
+    class invitation {
+        constructor(lieu, jour, heure) {
+            this.lieu = lieu;
+            this.jour = jour;
+            this.heure = heure;
+        }
+    }
+    let prop1 = new invitation("salon","samedi",15);
+    let prop2 = new invitation("cuisine","dimache",14);
+    
+    function inscrireInvitation(prop) {
+        let phrase = "La fête aura lieu dans le"+" "+prop.lieu;
+        return phrase;
+    }
+    console.log(inscrireInvitation(prop1));
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    class endroitVacance {
+        constructor(pays, emplacement, taille) {
+            this.pays = pays;
+            this.emplacement = emplacement;
+            this.taille = taille;
+        }
+    };
+    
+    let vacance1 = new endroitVacance("France","mer",100);
+    let vacance2 = new endroitVacance("Espagne", "montagne",200);
+    let vacance3 = new endroitVacance("Portugal", "foret",300);
+    
+    function phraseVacances(vacance) {
+        let phrase = "Nous partons en"+" "+vacance.pays+"car il y a la"+" "+vacance.emplacement+" "+"et en plus la taille est de:"+" "+vacance.taille;
+        return phrase;
+    }
+    console.log(phraseVacances(vacance1));
+    
+    
+    function condition(vacance) {
+        if( vacance === vacance3.emplacement) {
+            return "Vous partirez en foret";
+        }else{
+            return "Vous ne partirez pas en foret";
+        }
+    }
+    console.log(condition("foret"));
+    
+    function choisirSonPays(pays) {
+        let reponse = "";
+        switch(pays) {
+            case 1:
+                reponse = "Vous avez sélectionné :"+" "+vacance1.pays;
+                break;
+            case 2:
+                reponse = "Vous avez sélectionné :"+" "+vacance2.pays;
+                break;
+            case 3:
+                reponse = "Vous avez sélectionné :"+" "+vacance3.pays;
+                break;
+            default:
+                reponse = "Nous n'avons pas ce que vous cherchez";
+                break;
+        }
+        return reponse;
+    }
+    console.log(choisirSonPays(1));
+    
+    
+    function fizzBuzz(nombre) {
+        let chaineDeCar = "";
+        let result = 0;
+        if(nombre % 3 === 0){
+            chaineDeCar = "fizz";
+        }else if(nombre % 5 === 0){
+            chaineDeCar =  "buzz";
+        }else if(nombre % 3 === 0 && nombre % 5 === 0){
+            chaineDeCar = "fizzbuzz";
+        }else if(!nombre % 3 === 1 && !nombre % 5 === 1) {
+            result = nombre;
+            nombre = nombre + chaineDeCar;
+        }
+       return chaineDeCar;
+    return nombre;
+        
+    }
+    console.log(fizzBuzz(3));
+    console.log(fizzBuzz(5));
+    console.log(fizzBuzz(15));
+    console.log(fizzBuzz(47));
+    
+    function operationTernary(number) {
+        return number === 0 ? "Yes":"No";
+    }
+    console.log(operationTernary(2));
+    console.log(operationTernary(0));
+    
+    function plusieursChoix(number){
+        return (number > 10) ? "oui" :(number === 0) ? "oui" : "non";
+    }
+    
+    console.log(plusieursChoix(0));
+     console.log(plusieursChoix(9));
+    
+    
+    function recursive(n) {
+        if(n < 1) {
+            return [];
+        }else{
+            let array = recursive(n-1);
+            array.unshift(n);
+            return array;
+        }
+    }
+    
+    console.log(recursive(6));
+    
+    function recursive1(n) {
+        if(n < 1) {
+            return [];
+        }else{
+            let montabloo = recursive1(n-1);
+            montabloo.push(n);
+            return montabloo;
+        } 
+    }
+    
+       console.log(recursive1(10));
+    
+    
+    function factorielle(x) {
+        let result = 1;
+        for(let i = 1; i <= x; i++) {
+            result = result * i;
+            
+        }
+        return result;
+    }
+    console.log(factorielle(5));
+    
+    
+    //function somme(num){
+      //  let reponse = " ";
+        //if(num < 1) {
+          //reponse = "empty";  
+        //} else{
+        //reponse = somme(num- 1);
+        //reponse.push(n);
+            
+    //}
+      //  return reponse;
+    //}
+    
+    //console.log(somme(0));
+    //console.log(somme(12));
+    
+    
+  
+    function lesCles() {
+        const happy = "Je suis heureuse";
+        const content = "Je suis ravie";
+       const resultcles = happy +" "+ content;
+          console.log(resultcles);
+        
+    }
+    
+    console.log(lesCles);
+    
+     const chagArray = ["claire", 28, "grande"];
+    function changerTableau() {
+       
+        chagArray[0] = "Vincent";
+        chagArray[1] = 42;
+        chagArray[2] = "mince";
+    }
+    console.log(changerTableau);
+    
+   
+    
+   
+    const doubler = (a) => a * 2;
+    console.log(doubler(3));
+    
+    const bidule = (a,b) => a * b;
+    console.log(bidule(6,2));
+    
+    const defaut = (name = "Claire") => "Hello" + name;
+    console.log(defaut("Vincent"));
+    console.log(defaut());
+    
+    
+    
+    function exercice(nombre,arr) {
+        let resultat = (nombre = 2) => nombre * 2;
+        for(let i = 0; i<arr.length;i++) {
+            resultat = nombre + arr[i];
+        }
+        return resultat;
+    }
+    
+    console.log(exercice(2,[4,7,8,1]));
+    
+    function caCouteCombien(...args){
+        return "Ca coute"+" "+args.reduce((a,b) => a + b + 0)+" "+"euros.";
+    }
+    console.log(caCouteCombien(3,4,5));
+    
+    
+    function spreadOperator() {
+        let array1= ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"];
+        let phrase = "Les jours de la semaine sont :"+" "+[...array1];
+        if(Array.isArray == [array1]) {
+            return "C'est un tableau";
+        }
+           return phrase;
+    }
+    console.log(spreadOperator());
+    
+  
+    
+    let entreprises = {
+        "entreprise1": "aldo",
+        "entreprise2": "aubade",
+        "entreprise3": "zara"
+        
+    }
+    
+    //function choisirSonEntreprise(mois){
+      //  let arr = ["Jan","Fev","Mars","Avril","Mai","Juin","Juillet","Aout","Sept","Oct","Nov","Dec"];
+        //let phraseDePolitesse = "Au vu de vos réponses sur le questionnaire:";
+        //let result = "";
+        //for( i < arr.length;i++){
+          //  result =  arr.indexOf(mois);
+    //    }
+      //  return phraseDePolitesse + result;
+//    }
+  //  console.log(choisirSonEntreprise("Avril"));
+    
+    let personnLaureline = {
+        "name" : "Laureline",
+        "agexx": 30,
+        "cheveux": "blond"
+    }
+    
+    const {name, agexx} = personnLaureline;
+    console.log(personnLaureline);
+    
+    
+function goToAirport(arr) {
+    
+    for (let i = 0; i < arr.length; i++) {
+         return arr.push(8);
+    }
+    
+}
+    console.log(goToAirport([2,2,2]));
+  
+    
+    function templateString() {
+        let claire = {
+            "name":"Claire",
+            "age": 28
+        }
+        
+        let phraseTemplateString = `Je m'appelle ${claire.name} et j'ai ${claire.age}`;
+        return phraseTemplateString;
+    }
+    console.log(templateString());
+    
+    
+    
+   let nicolasDeclareSaFlamme = {
+       "name": "Nicolas",
+       "age": 39,
+       "amoureuse": "Laureline",
+       "adjectif": "A la folie",
+       "declaration"(name, amoureuse, adjectif){
+           return `Le petit ${this.name} déclare sa flamme à ${this.amoureuse}, il l'aime ${this.adjectif}.`
+       }
+   }
+   console.log(nicolasDeclareSaFlamme);
+    console.log(nicolasDeclareSaFlamme.declaration);
+    console.log(nicolasDeclareSaFlamme.declaration("name","amoureuse","adjectif"));
+    
+    
+    class Meat {
+        constructor(name) {
+            this.name = name;
+        }
+    }
+    
+    const newMeat = new Meat('chicken');
+    console.log(newMeat);
+    console.log(newMeat.name);
+    
+    
+    function choisirSonRepas(monAge) {
+        let age = 12;
+        let prixDuRepas = 20;
+        let reponse = " ";
+        let accueil = {
+            "accepte": "Tous les visiteurs",
+            "bonjour"(){
+                reponse = `Bienvenue au restaurant Italien`;
+            }
+        }
+        class Repas {
+            constructor(name, prix, cuisson) {
+                this.name = name;
+                this.prix = prix;
+                this.cuisson = cuisson;
+            }
+        }
+        if(monAge <= age) {
+            reponse = `${accueil.bonjour},le repas est gratuit pour les enfants de ${choisirSonRepas.age} et moins de ${choisirSonRepas.age}.`;
+        }else{
+            reponse = `${accueil.bonjour},Le repas sera de ${choisirSonRepas.prixDuRepas} euros.`
+        }
+        return reponse;
+        
+    };
+   
+    
+    let myString ="Coucou je suis Claire";
+    let myrexxx = /(\w+)\s(\w+)\s(\w+)\s(\w+)/;
+    let resultxx = myrexxx.test(myString);
+    let resultxx1 = myString.match(myrexxx);
+    console.log(resultxx);
+    console.log(resultxx1);
+    
+    let mauxDePass = "DoudouEtClairette321";
+    let verif = /^(\w+)\S(\d+)$/;
+    let resulllttii = verif.test(mauxDePass);
+    console.log(resulllttii);
+    
+
+
+    
+    
+    
+  
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+
+
+
+
+    
+    
+
+
+
+
+
+</script>

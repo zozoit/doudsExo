@@ -1,0 +1,93 @@
+
+<!-- saved from url=(0039)file:///E:/Telechargements/enquete.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>
+
+	function Person(prenom, nom, age) {
+        this.prenom = prenom;
+        this.nom = nom;
+        this.age = age;
+		// Creer le constructeur de l'objet person avec ses trois attributs
+	} 
+
+	function isOldEnoughForPrison(suspect) {
+        if(suspect.age < 16)
+            {
+                return true; 
+            } else {
+                return false;
+            }
+		// Function qui renvoie true si le suspect a moins de 16 ans
+	}
+
+	function hasAlibi(person, suspects){
+        let individuEnleve = suspects;
+        individuEnleve.delete(person);
+        
+		// Function qui enleve la personne de la liste des suspects
+	}
+
+	function addSuspect(person, suspects) {
+        let individuRajoute = suspects;
+        individuRajoute.add(person);
+		// Function qui rajoute une personne à une liste de suspects
+	}
+
+	function afficheListeSuspects(suspects) {
+        for (let item of suspects) 
+            console.log( item.prenom+ " "+ item.nom);
+        	// Function qui ecrit dans console.log la liste de tous les suspects sous cette forme "Vincent Bosc" (saut de ligne) "Claire Lacanal", etc..."
+	}
+
+	// Ne rien modifier au dessous de cette ligne
+
+	const antron = new Person("Antron", "McCray", 14);
+	const korey = new Person("Korey", "Wise", 16);
+	const matias = new Person("Matias", "Reyes", 15);
+	const kayzer = new Person("Kayzer", "Soze", 35);
+	const vincent = new Person("Vincent", "Bosc", 42);
+	const claire = new Person("Claire", "Lacanal", 27);
+
+	// La liste des premiers suspects
+	console.log("La liste initiale des suspects");
+	const suspects = new Set([antron, matias, kayzer, vincent, claire]);
+	afficheListeSuspects(suspects);
+
+	console.log(""); // pour sauter une ligne
+
+	// Les douds ont un alibi, ils ont été vu dans un restaurant romantique au moment du crime
+	hasAlibi(vincent, suspects);
+	hasAlibi(claire, suspects);
+	console.log("La liste des suspects apres disculpation des douds");
+	afficheListeSuspects(suspects);
+
+	console.log("");
+
+	// Korey et Antron reviennent au poste de police, un policier idiot les rajoutent dans la liste des suspects, même Korey. Et Antron également même s'il était déjà dans la liste
+	addSuspect(korey, suspects);
+	addSuspect(antron, suspects);
+	console.log("La liste des suspects apres que Korey ait accompagné Antron au poste");
+	afficheListeSuspects(suspects);
+
+	console.log("");
+
+	// Kayzer Soze convaint un policier qu'il n'existe pas
+	hasAlibi(kayzer, suspects);
+	console.log("La liste des suspects apres que Kayzer Soze ait disparu");
+	afficheListeSuspects(suspects);
+
+	console.log("");
+
+	// Tous les suspects sont condamnés, on vérifie s'il sont assez vieux pour aller en prison
+	console.log("korey en prison : " + isOldEnoughForPrison(korey));
+	console.log("matias en prison : " + isOldEnoughForPrison(matias));
+	console.log("antron en prison : " + isOldEnoughForPrison(antron));
+
+	</script>
+
+	</head><body>Exercice 2
+
+	<p>
+	Exercice avec un meurtre et des suspects !
+	<br>Appuie sur F12 pour voir la console et les résultats des tests de tes functions.
+	</p>
+</body></html>
